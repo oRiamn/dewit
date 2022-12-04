@@ -15,7 +15,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
     name: 'DeWit',
     short_name: 'DeWit',
     theme_color: '#ffffff',
-    display: 'fullscreen',
+    display: 'standalone',
     orientation: 'portrait',
     background_color: '#ffffff',
     lang: 'fr',

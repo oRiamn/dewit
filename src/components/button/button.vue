@@ -39,6 +39,8 @@ export default defineComponent({
 
   color: var(--color-text);
 
+  background: var(--color-background);
+
   &:active {
     transform: scale(0.9);
   }

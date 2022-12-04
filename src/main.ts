@@ -4,6 +4,9 @@ import LoadScript from 'vue-plugin-load-script';
 
 import App from './app.vue'
 import router from './router'
+import { VVP } from './viewport-fix'
+
+new VVP();
 
 const app = createApp(App)
 

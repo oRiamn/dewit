@@ -92,15 +92,13 @@ export default defineComponent({
   .add {
     display: flex;
     width: 100%;
-    padding: 0 1em;
-    margin: 1em 0;
   }
 
+  background: var(--color-background);
+
   .tasks {
-    background: var(--color-background);
     font-size: 20px;
     margin: auto;
-    box-shadow: 0 5px 30px var(--color-border);
     flex-direction: columns;
     flex: 1;
     flex-direction: column;
@@ -108,12 +106,14 @@ export default defineComponent({
   }
   .add {
     flex: 0;
+    padding: 0 1em;
+    margin: 1em 0;
     input {
       display: flex;
       flex: 1;
       padding: 1em;
       margin: 0 1em 0 0;
-
+      color: var(--color-text);
       border-style: solid;
       border-image-slice: 1;
       border-width: 4px;
@@ -122,7 +122,7 @@ export default defineComponent({
         var(--color-gradient-from),
         var(--color-gradient-to)
       );
-
+      background: var(--color-background);
       -webkit-appearance: none;
       outline: none;
     }

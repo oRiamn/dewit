@@ -1,18 +1,15 @@
 <script setup lang="ts">
-import { useappStatusStore } from "./stores/app_status";
+import { useappStatusStore } from './stores/app_status'
 
-const appStatus = useappStatusStore();
+const appStatus = useappStatusStore()
 appStatus.sync()
 </script>
 
 <template>
   <div class="appContainer">
     <div class="appHeader">
-      <div class="appLogo">
-      </div>
-      <div class="userMenu">
-        {{ appStatus.isOnline ? "On" : "Off" }} Line
-      </div>
+      <div class="appLogo"> </div>
+      <div class="userMenu"> {{ appStatus.isOnline ? 'On' : 'Off' }} Line </div>
     </div>
     <div class="appSubHeader">Sub-Header</div>
     <div class="appContent">
@@ -25,10 +22,13 @@ appStatus.sync()
 @import '@/assets/base.css';
 
 .appContainer {
-  height: 100vh;
+  height: var(--100vvh);
+  max-height: var(--100vvh);
+  min-height: var(--100vvh);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .appContainer > * {

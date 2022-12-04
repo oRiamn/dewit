@@ -21,8 +21,12 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
 
-  --color-gradient-from:  #5ebec1;
+  --color-gradient-from: #5ebec1;
   --color-gradient-to: #27fdc7;
+
+  --100vvh: 100vh;
+  --100vvw: 100vw;
+
 }
 
 /* semantic color variables for this project */
@@ -67,8 +71,20 @@
   text-decoration: none;
 }
 
+html,body, #app {
+  min-height: -webkit-fill-available;
+  min-height: var(--100vvh);
+  max-height: var(--100vvh);
+
+  width: var(--100vvw, 100vw);
+  min-width: var(--100vvw, 100vw);
+  max-width: var(--100vvw, 100vw);
+
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
@@ -80,4 +96,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: -webkit-fill-available;
 }
