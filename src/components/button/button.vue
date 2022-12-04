@@ -19,81 +19,28 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
-$fuschia: #ff0081;
-$button-bg: $fuschia;
-$button-text-color: #fff;
-
 
 .bubbly-button {
-  text-align: center;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  display: inline-block;
-  font-size: 1em;
-  padding: 1em 2em;
+  display: flex;
+  padding: 1em;
+  margin: 0 1em 0 0;
+
+  border-style: solid;
+  border-image-slice: 1;
+  border-width: 4px;
+  border-image-source: linear-gradient(
+    to left,
+    var(--color-gradient-from),
+    var(--color-gradient-to)
+  );
+
   -webkit-appearance: none;
-  appearance: none;
-  background-color: $button-bg;
-  color: $button-text-color;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  outline: none;
 
-  &:focus {
-    outline: 0;
-  }
-
-  &:before,
-  &:after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 140%;
-    height: 100%;
-    left: -20%;
-    z-index: -1000;
-    transition: all ease-in-out 0.5s;
-    background-repeat: no-repeat;
-  }
-
-  &:before {
-    display: none;
-    top: -75%;
-    background-image: radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, transparent 20%, $button-bg 20%, transparent 30%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, transparent 10%, $button-bg 15%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%);
-    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
-      15% 15%, 10% 10%, 18% 18%;
-    //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
-  }
-
-  &:after {
-    display: none;
-    bottom: -75%;
-    background-image: radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, transparent 10%, $button-bg 15%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%),
-      radial-gradient(circle, $button-bg 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%,
-      20% 20%;
-    //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
-  }
+  color: var(--color-text);
 
   &:active {
     transform: scale(0.9);
-    background-color: darken($button-bg, 5%);
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
   }
 
   &.animate {

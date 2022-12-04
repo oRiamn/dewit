@@ -18,25 +18,6 @@ appStatus.sync()
     <div class="appContent">
       <router-view></router-view>
     </div>
-    <div class="appFooter">
-      <nav class="footerNav">
-        <ul class="footerNav-items">
-          <li class="footerNav-item">
-            <router-link class="footerNav-itemButton" to="/">Home</router-link>
-          </li>
-          <li class="footerNav-item">
-            <router-link class="footerNav-itemButton" to="/"
-              >Exercises</router-link
-            >
-          </li>
-          <li class="footerNav-item">
-            <router-link class="footerNav-itemButton" to="/settings"
-              >Settings</router-link
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
   </div>
 </template>
 

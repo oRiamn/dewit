@@ -40,13 +40,13 @@ export default defineComponent({
         x2="25"
         y2="25"
       >
-        <stop offset="0%" stop-color="#27FDC7" />
+        <stop offset="0%" stop-color="var(--color-gradient-to)" />
         <stop offset="100%" stop-color="#0FC0F5" />
       </linearGradient>
 
       <linearGradient id="lineGradient">
         <stop offset="0%" stop-color="#0FC0F5" />
-        <stop offset="100%" stop-color="#27FDC7" />
+        <stop offset="100%" stop-color="var(--color-gradient-to)" />
       </linearGradient>
 
       <path
@@ -92,13 +92,15 @@ export default defineComponent({
   .add {
     display: flex;
     width: 100%;
+    padding: 0 1em;
+    margin: 1em 0;
   }
 
   .tasks {
-    background: #fff;
+    background: var(--color-background);
     font-size: 20px;
     margin: auto;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 30px var(--color-border);
     flex-direction: columns;
     flex: 1;
     flex-direction: column;
@@ -109,10 +111,20 @@ export default defineComponent({
     input {
       display: flex;
       flex: 1;
-      display: flex;
-      flex: 1;
-      padding: 1em em;
+      padding: 1em;
       margin: 0 1em 0 0;
+
+      border-style: solid;
+      border-image-slice: 1;
+      border-width: 4px;
+      border-image-source: linear-gradient(
+        to left,
+        var(--color-gradient-from),
+        var(--color-gradient-to)
+      );
+
+      -webkit-appearance: none;
+      outline: none;
     }
   }
 }

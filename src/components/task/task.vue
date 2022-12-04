@@ -59,7 +59,6 @@ $duration: 0.8s;
 }
 
 .task__text {
-  color: saturate(#1b4a4e, 15%);
   transition: all calc($duration/2) linear calc($duration/2);
 }
 
@@ -71,7 +70,7 @@ $duration: 0.8s;
   margin: auto;
 
   fill: none;
-  stroke: #27fdc7;
+  stroke: var(--color-gradient-to);
   stroke-width: 2;
   stroke-linejoin: round;
   stroke-linecap: round;
@@ -83,27 +82,24 @@ $duration: 0.8s;
   transition: stroke-dashoffset $duration cubic-bezier(0.9, 0, 0.5, 1);
 }
 .task__circle {
-  stroke: #27fdc7;
+  stroke: var(--color-gradient-to);
   stroke-dasharray: 1 6;
   stroke-width: 0;
 
   transform-origin: 13.5px 12.5px;
   transform: scale(0.4) rotate(0deg);
-  animation: none $duration linear; //cubic-bezier(.08,.56,.04,.98);
+  animation: none $duration linear;
 
   @keyframes explode {
-    //0% { stroke-width: 0; transform: scale(0.5) rotate(0deg); }
     30% {
       stroke-width: 3;
       stroke-opacity: 1;
       transform: scale(0.8) rotate(40deg);
-      //animation-timing-function: cubic-bezier(.89,.01,.95,.51);
     }
     100% {
       stroke-width: 0;
       stroke-opacity: 0;
       transform: scale(1.1) rotate(60deg);
-      //animation-timing-function: cubic-bezier(.08,.56,.04,.98);
     }
   }
 }
@@ -113,7 +109,7 @@ $duration: 0.8s;
   transition-delay: $duration * 0.2;
 }
 .task__check {
-  stroke: #27fdc7;
+  stroke: var(--color-gradient-to);
   stroke-dasharray: 9.8995, 9.8995;
   stroke-dashoffset: 9.8995;
   transition-duration: $duration * 0.4;
@@ -129,7 +125,7 @@ $duration: 0.8s;
 .task__state:checked {
   ~ .task__text {
     transition-delay: 0s;
-    color: #5ebec1;
+    color: var(--color-text);
     opacity: 0.6;
   }
 
